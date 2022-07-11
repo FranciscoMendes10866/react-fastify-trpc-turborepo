@@ -1,10 +1,12 @@
 import { inferAsyncReturnType } from "@trpc/server";
 import { CreateFastifyContextOptions } from "@trpc/server/adapters/fastify";
 
-export const createContext = ({ req, res }: CreateFastifyContextOptions) => {
-  const user = { name: req.headers.username ?? "anonymous" };
+import { PrismaClient } from "@prisma/client";
 
-  return { req, res, user };
-}
+const prisma = new PrismaClient();
+
+export const createContext = ({ req, res }: CreateFastifyContextOptions) => {
+  return { req, res, prisma };
+};
 
 export type Context = inferAsyncReturnType<typeof createContext>;

@@ -1,7 +1,7 @@
 import { trpc } from "../hooks/trpc";
 
 const Hello = () => {
-  const result = trpc.useQuery(["getUserById", { id: "1" }]);
+  const result = trpc.useQuery(["getNotes"]);
 
   return <div>Hello</div>;
 };
