@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 import { trpc } from "./hooks/trpc";
-import Hello from './components/Hello'
+import AppBody from "./components/AppBody";
 
 const App = () => {
   const queryClient = useMemo(() => new QueryClient(), []);
@@ -17,7 +17,7 @@ const App = () => {
   return (
     <trpc.Provider client={trpcClient} queryClient={queryClient}>
       <QueryClientProvider client={queryClient}>
-        <Hello />
+        <AppBody />
       </QueryClientProvider>
     </trpc.Provider>
   );
