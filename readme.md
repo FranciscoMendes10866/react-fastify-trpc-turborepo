@@ -1,2 +1,2 @@
 # react-fastify-trpc-turborepo
-React, Fastify, tRPC, Turborepo 😱
+React SPA, Fastify + tRPC Api, Turborepo 😱
