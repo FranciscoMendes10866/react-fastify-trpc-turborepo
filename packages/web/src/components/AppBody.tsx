@@ -1,4 +1,11 @@
-import { Card, Text, Container, Input, Button, Grid } from "@nextui-org/react";
+import {
+  Card,
+  Text,
+  Container,
+  Textarea,
+  Button,
+  Grid,
+} from "@nextui-org/react";
 import { useCallback } from "react";
 import { useFormik } from "formik";
 
@@ -55,27 +62,29 @@ const AppBody = () => {
           marginTop: 50,
         }}
       >
-        <Input
+        <Textarea
           underlined
           color="primary"
           labelPlaceholder="Type something..."
           name="content"
           value={formik.values.content}
           onChange={formik.handleChange}
+          css={{ width: 350 }}
         />
         <Button
           shadow
           color="primary"
           auto
           css={{ marginLeft: 25 }}
+          size="lg"
           type="submit"
         >
           Create
         </Button>
       </form>
-      <Grid.Container gap={4}>
+      <Grid.Container gap={2}>
         {getNotes.data?.map((note) => (
-          <Grid xs={3} onClick={() => handleNoteRemoval(note.id)}>
+          <Grid xs={4} onClick={() => handleNoteRemoval(note.id)}>
             <Card
               key={note.id}
               isHoverable
@@ -83,7 +92,15 @@ const AppBody = () => {
               css={{ cursor: "pointer" }}
             >
               <Card.Body>
-                <Text h4>{note.text}</Text>
+                <Text
+                  h4
+                  css={{
+                    textGradient: "45deg, $blue600 -20%, $pink600 50%",
+                  }}
+                  weight="bold"
+                >
+                  {note.text}
+                </Text>
               </Card.Body>
             </Card>
           </Grid>
