@@ -2,10 +2,9 @@
   "name": "@monorepo/api",
   "version": "1.0.0",
   "main": "src/router",
-  "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon",
+    "dev": "nodemon -e ts --exec \"yarn build\" && \"yarn start\"",
     "build": "tsc",
     "start": "node dist/main.js"
   },
