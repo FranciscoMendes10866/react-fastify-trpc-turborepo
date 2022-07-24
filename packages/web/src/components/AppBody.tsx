@@ -10,6 +10,9 @@ import { useCallback } from "react";
 import { useFormik } from "formik";
 
 import { trpc } from "../hooks/trpc";
+interface IFormFields {
+  content: string
+}
 
 const AppBody = () => {
   const utils = trpc.useContext();
@@ -17,7 +20,7 @@ const AppBody = () => {
   const createNote = trpc.useMutation(["createNote"]);
   const deleteNote = trpc.useMutation(["deleteNote"]);
 
-  const formik = useFormik<{ content: string }>({
+  const formik = useFormik<IFormFields>({
     initialValues: {
       content: "",
     },
