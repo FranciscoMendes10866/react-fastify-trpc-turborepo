@@ -1,7 +1,7 @@
 {
   "name": "@monorepo/api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/router",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon",
@@ -13,7 +13,6 @@
     "@prisma/client": "^4.0.0",
     "@trpc/server": "^9.25.3",
     "fastify": "^4.2.0",
-    "yarn": "^1.22.19",
     "zod": "^3.17.3"
   },
   "devDependencies": {
