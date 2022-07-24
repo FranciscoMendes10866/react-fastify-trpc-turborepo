@@ -11,7 +11,7 @@ import { useFormik } from "formik";
 
 import { trpc } from "../hooks/trpc";
 interface IFormFields {
-  content: string
+  content: string;
 }
 
 const AppBody = () => {
@@ -87,13 +87,8 @@ const AppBody = () => {
       </form>
       <Grid.Container gap={2}>
         {getNotes.data?.map((note) => (
-          <Grid xs={4} onClick={() => handleNoteRemoval(note.id)}>
-            <Card
-              key={note.id}
-              isHoverable
-              variant="bordered"
-              css={{ cursor: "pointer" }}
-            >
+          <Grid xs={4} key={note.id} onClick={() => handleNoteRemoval(note.id)}>
+            <Card isHoverable variant="bordered" css={{ cursor: "pointer" }}>
               <Card.Body>
                 <Text
                   h4
